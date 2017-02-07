@@ -67,6 +67,10 @@ stored in the converted data structure.
 History
 ----------
 
+1.0.1-dig1
+~~~~~~
+Check for empty object as well as None
+
 1.0.1
 ~~~~~~
 Fix issue with Postgres JSONB fields.

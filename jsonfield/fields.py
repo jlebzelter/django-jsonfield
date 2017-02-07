@@ -80,7 +80,7 @@ class JSONField(models.Field):
         return 'text'
 
     def from_db_value(self, value, expression, connection, context):
-        if value is None:
+        if not value:
             return None
         return json.loads(value, **self.decoder_kwargs)
 
@@ -89,7 +89,7 @@ class JSONField(models.Field):
         return self.get_prep_value(value)
 
     def get_prep_value(self, value):
-        if value is None:
+        if not value:
             if not self.null and self.blank:
                 return ""
             return None
